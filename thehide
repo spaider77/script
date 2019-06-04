@@ -1,5 +1,10 @@
 #!/bin/sh
 
+#need wireguard and macchanger to be installed
+#sudo apt-get install jq wireguard macchanger
+#FOR AZIRE: curl -LO https://www.azirevpn.com/dl/azirevpn-wg.sh && chmod +x ./azirevpn-wg.sh && ./azirevpn-wg.sh
+
+
 #for LIVE system, comment if not
 
 #sudo apt-get purge resolvconf && sudo service network-manager restart
@@ -48,3 +53,9 @@ su x -c 'notify-send "wireguard запущен...готово!"'
 
 
 exit 0
+
+
+#edit crontab for autorun
+#crontab -e
+#@reboot (sleep 60; sh /path/to/script
+#chmod +x /path/to/script
