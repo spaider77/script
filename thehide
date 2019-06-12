@@ -1,30 +1,29 @@
 #!/bin/sh
 
-#for LIVE system, comment if not
-sudo apt-get purge resolvconf && sudo service network-manager restart
-sudo apt reinstall resolvconf
-
-
 #Wipe cache and other
 
         sync; echo 3 > /proc/sys/vm/drop_caches
         swapoff -a && swapon -a
         sleep 1
 
-  killall -q chrome dropbox iceweasel skype icedove thunderbird firefox-esr firefox chromium xchat transmission kvirc pidgin hexchat # feel free to add your own internet connected app
+  killall -q telegram-desktop chrome dropbox iceweasel skype icedove thunderbird firefox-esr firefox chromium xchat transmission kvirc pidgin hexchat # feel free to add your own internet connected app
 sleep 1
-  bleachbit -c adobe_reader.cache chromium.cache chromium.current_session chromium.history elinks.history emesene.cache epiphany.cache firefox.url_history flash.cache flash.cookies google_chrome.cache goog$
+  bleachbit -c telegram-desktop.cache adobe_reader.cache chromium.cache chromium.current_session chromium.history elinks.history emesene.cache epiphany.cache firefox.url_history flash.cache flash.cookies google_chrome.cache goog$
 sleep 1
 
-sudo apt-get reinstall resolvconf -y && sudo apt-get reinstall network-manager -y
+#reinstall services
+
+sudo apt-get reinstall openresolv -y && sudo apt-get reinstall network-manager -y
 su x -c 'notify-send "resolvconf и networkmanager переустановлены..."'
 sleep 1
 
+#add some text :)
 echo "[connection]" >> /etc/NetworkManager/NetworkManager.conf
 echo "ethernet.cloned-mac-address=preserve" >> /etc/NetworkManager/NetworkManager.conf
 echo "wifi.cloned-mac-address=preserve" >> /etc/NetworkManager/NetworkManager.conf
 sleep 1
 
+#change mac
 ifconfig eth0 down
 ifconfig wlan0 down
 ifconfig wlan1 down
@@ -40,6 +39,7 @@ sleep 1
 su x -c 'notify-send "wlan0 wlan1 eth0 mac-адреса успешно изменены..."'
 sleep 10
 
+#wireguard start
 wg-quick up azirevpn-se1	
 
 su x -c 'notify-send "wireguard запущен...готово!"'
