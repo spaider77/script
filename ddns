@@ -1,0 +1,29 @@
+Dynamic DNS for CloudFlare with ddclient
+Today I found out that ddclient added support for CloudFlare since version 3.8.2. Unfortunately, Ubuntu 14.04 ships with version 3.8.1, but I will show you how to update it.
+
+It is actually easier to have the old version still installed because it sets up the background daemon. So make sure ddclient is installed, and perl has json support:
+
+> sudo apt-get install ddclient libjson-any-perl
+Now download and extract the last version of the ddclient binary. At the time of writing, the latest version is 3.8.3, click here to see if there is a newer version available and modify the download link below:
+
+> wget http://downloads.sourceforge.net/project/ddclient/ddclient/ddclient-3.8.3.tar.bz2
+> tar -jxvf ddclient-3.8.3.tar.bz2
+Then, overwrite the existing binary with the newer one:
+
+> cp -f ddclient-3.8.3/ddclient /usr/sbin/ddclient
+In this version, the location of the default configuration file has changed from /etc/ddclient.conf to /etc/ddclient/ddclient.conf. So create the new directory and move the old configuration file (or just create a new one):
+
+> mkdir /etc/ddclient
+> mv /etc/ddclient.conf /etc/ddclient
+Below is my ddclient configuration using the cloudflare protocol. Use your CloudFlare global API key as the password, you can find it in the account section section. Make sure you replace all the values between *'s.
+
+daemon=1800
+protocol=cloudflare
+use=web
+server=www.cloudflare.com
+ssl=yes
+login=*cloudflare-email*
+password=*cloudflare-global-api-key*
+zone=*cloudflare-domain*
+*full-hostname*
+Hope this guide was useful!
