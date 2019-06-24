@@ -5,7 +5,7 @@ sleep 1
 pip install sshuttle
 sleep 1
 
-echo -e 'name server 1.1.1.1' > /etc/resolf.conf 
-echo 'alias haha ="sshuttle -l 0.0.0.0 --dns -r $1@$2 0/0">/etc/profile
-reboot 
+#echo -e 'nameserver 1.1.1.1' > /etc/resolv.conf 
+echo 'alias ha-ha ="sshuttle -l 0.0.0.0 --dns -r $1@$2 0/0">/etc/profile
+ 
 exit 0
