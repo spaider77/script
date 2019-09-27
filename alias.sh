@@ -1,2 +1,3 @@
-alias www='firefox-esr'
-echo "alias ooo='chromium'">>~/.zshrc
+#!/bin/bash
+
+alias 'www'='echo hello!!'
