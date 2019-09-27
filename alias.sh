@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alias www='echo hello!!'
+echo 'echo HELLLO!'>/usr/bin/hello && chmod +x /usr/bin/hello
