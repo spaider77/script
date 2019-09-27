@@ -1,4 +1,4 @@
 #!/bin/bash
 
 alias www='firefox-esr'
-alias ooo='chromium'
+echo "alias ooo='chromium'">>~/.zshrc
