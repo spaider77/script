@@ -1,3 +1,3 @@
 #!/bin/bash
 
-alias 'www'='echo hello!!'
+alias www='echo hello!!'
