@@ -1,0 +1,4 @@
+clear
+climate ipinfo
+macchanger -s wlan0
+ccat /opt/helpme.txt
