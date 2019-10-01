@@ -7,10 +7,6 @@ sudo useradd -m -G sudo -s /bin/bash x2
 sudo chown -hR x2 /home/x2/
 sudo useradd -m -G sudo -s /bin/bash x3 
 sudo chown -hR x3 /home/x3/
-sudo useradd -m -G sudo -s /bin/bash x4 
-sudo chown -hR x4 /home/x4/
-sudo useradd -m -G sudo -s /bin/bash x5 
-sudo chown -hR x5 /home/x5/
 
 sudo touch /usr/bin/tgk
 sudo echo 'gksu -u x$1 telegram-desktop &'>/usr/bin/tgk
