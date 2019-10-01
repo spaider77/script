@@ -1,5 +1,10 @@
 #!/bin/bash
 
+sudo rm /usr/bin/helpme*
+sudo rm /usr/bin/ddos*
+sudo rm /usr/bin/bomber*
+sudo rm /usr/bin/tgk*
+
 #helpme
 sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/helpme.txt
 sudo touch /usr/bin/helpme
