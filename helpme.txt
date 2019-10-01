@@ -1,6 +1,6 @@
 ddos -    ddos attack script (version 1 and 2)
 bomber -  sms bomb tool
 tgk -     launch many copies of telegram-desktop | tgk 1 | tgk 2 | tgk 3 |
-
+dnsleak - dns leak test
 
 helpme -  this message :)
