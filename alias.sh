@@ -9,7 +9,7 @@ sudo rm /usr/bin/tgk*
 #helpme
 sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/helpme.txt
 sudo touch /usr/bin/helpme
-sudo echo 'cat /opt/helpme.txt'>/usr/bin/helpme
+sudo echo 'ccat /opt/helpme.txt'>/usr/bin/helpme
 chmod +x /usr/bin/helpme
 
 #launch many copies telegram-desktop
