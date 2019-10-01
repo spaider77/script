@@ -18,6 +18,10 @@ echo "ssh -t root@88.99.163.122 -p 50400 sudo /opt/infinite-bomber-reborn/builds
 chmod +x /usr/bin/bomber
 
 #run ddos
-touch /usr/bin/ddos
-echo "ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos$1.py $2">/usr/bin/ddos
-chmod +x /usr/bin/ddos
+touch /usr/bin/ddos1
+echo "ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos1.py $1">/usr/bin/ddos1
+chmod +x /usr/bin/ddos1
+
+touch /usr/bin/ddos2
+echo "ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos2.py $1">/usr/bin/ddos2
+chmod +x /usr/bin/ddos2
