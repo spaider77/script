@@ -8,8 +8,7 @@ sudo rm /usr/bin/tgk*
 
 #helpme
 sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/helpme.txt
-sudo touch /usr/bin/helpme
-sudo echo 'ccat /opt/helpme.txt'>/usr/bin/helpme
+sudo wget -P /usr/bin/ https://github.com/l4ckyguy/script/raw/master/helpme
 chmod +x /usr/bin/helpme
 
 #launch many copies telegram-desktop
