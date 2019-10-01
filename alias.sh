@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo rm /usr/bin/helpme*
+sudo rm /opt/helpme*
 sudo rm /usr/bin/ddos*
 sudo rm /usr/bin/bomber*
 sudo rm /usr/bin/tgk*
