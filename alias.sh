@@ -8,5 +8,6 @@ chown -hR x2 /home/x2/
 useradd -m -G sudo -s /bin/bash x3 
 chown -hR x3 /home/x3/
 
+touch /usr/bin/tgk
 echo 'gksu -u x$1 telegram-desktop &'>/usr/bin/tgk
 chmod +x /usr/bin/tgk
