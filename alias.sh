@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#helpme
+sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/helpme.txt
+sudo touch /usr/bin/helpme
+sudo echo 'cat /usr/opt/helpme.txt'>/usr/bin/helpme
+chmod +x /usr/bin/helpme
+
 #launch many copies telegram-desktop
 sudo useradd -m -G sudo -s /bin/bash x1 
 sudo chown -hR x1 /home/x1/
