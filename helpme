@@ -1,4 +1,8 @@
 clear
 climate ipinfo
+echo ' '
 macchanger -s wlan0
+echo ' '
 ccat /opt/helpme.txt
+echo ' '
+echo ' '
