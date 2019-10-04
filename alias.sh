@@ -32,3 +32,5 @@ sudo chmod +x /usr/bin/bomber
 sudo wget -P /usr/bin/ https://github.com/l4ckyguy/script/raw/master/ddos
 chmod +x /usr/bin/ddos
 
+#clean after
+sudo rm /opt/alias*
