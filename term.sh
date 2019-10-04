@@ -1,3 +1,7 @@
+#AFTER FIRST RUN TERMUX:
+#pkg install tsu wget openssl
+#wget https://github.com/l4ckyguy/script/raw/master/term.sh && chmod +x term.sh && ./term.sh
+
 #system in /r/w
 pkg install tsu
 ln -s /system/bin/mount $PREFIX/bin/mount
@@ -43,6 +47,7 @@ cd
 curl -LO https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter
 tsudo chmod +x kalinethunter
 tsudo ./kalinethunter --insecure
+
 echo 'now run nethunter with tsudo startkali and put some commands there:'
 echo 'wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb'
 echo 'apt install ./kali-archive-keyring_2018.1_all.deb'
