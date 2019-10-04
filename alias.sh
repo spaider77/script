@@ -16,7 +16,8 @@ echo "echo ''">>/root/.zshrc
 echo "ccat /opt/news.txt">>/root/.zshrc
 echo "echo ''">>/root/.zshrc 
 echo "echo ''">>/root/.zshrc 
-echo "echo '...All done! Enjoy!'">>/root/.zshrc 
+echo "echo '...All done! Enjoy!'">>/root/.zshrc
+echo 'echo ""'>>/root/.zshrc
 
 sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/helpme.txt
 sudo wget -P /usr/bin/ https://github.com/l4ckyguy/script/raw/master/helpme
