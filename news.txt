@@ -1,2 +1,5 @@
 3.10.19
 *add RED section. There is RED team (attackers team, bad team :)) tools and snipets. Enjoy!
+
+4.10.19
+*add SSL for l4cky.com. Now l4cky.com in https:// zone!
