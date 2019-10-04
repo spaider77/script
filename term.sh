@@ -1,10 +1,11 @@
 #system in /r/w
+pkg install tsu
 ln -s /system/bin/mount $PREFIX/bin/mount
 tsudo mount -o remount,rw /system
 
 #termux start goodies
 apt update && apt upgrade -y
-pkg install curl wget git nano openssl tmux openssl-dev ncurses-utils git python python2 nodejs golang zsh php -y
+pkg install curl wget git nano openssl tmux ncurses-utils git python python2 nodejs golang zsh php -y
 pip install bpython ipython
 git clone https://github.com/Hax4us/java
 mv java/openjdk/java /data/data/com.termux/files/usr/bin
