@@ -11,7 +11,8 @@ sudo rm /opt/alias*
 #helpme & news
 
 sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/news.txt
-echo 'ccat /opt/news.txt'>>/root/.zshrc
+echo "echo ''">>/root/.zshrc 
+echo "ccat /opt/news.txt">>/root/.zshrc
 echo "echo ''">>/root/.zshrc 
 echo "echo ''">>/root/.zshrc 
 echo "echo '...All done! Enjoy!'">>/root/.zshrc 
