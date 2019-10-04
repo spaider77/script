@@ -1,6 +1,5 @@
 #!/bin/bash
-sudo rm /tmp/botest
 sudo touch /usr/bin/ohoho
 sudo echo 'echo "HELLO WORLD!"'>/usr/bin/ohoho
 sudo chmod +x /usr/bin/ohoho
-sudo rm /tmp/botest
+sudo rm /tmp/botest*
