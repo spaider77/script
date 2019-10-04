@@ -18,20 +18,6 @@ pkg install tsu #if you r r00t
 uid=$(id -u)
 su -c chown -R $uid:$uid /data/data/com.termux/ && su -c restorecon -RF /data/data/com.termux
 
-#termux customization
-git clone https://github.com/Bhai4You/Termux-Banner
-cd Termux-Banner/zsh
-chmod +x requirement.sh t-ban.sh
-bash requirement.sh
-bash t-ban.sh
-chsh -s zsh
-git clone https://github.com/jotyGill/quickz-sh.git
-cd quickz-sh
-tsudo chmod +x quickz.sh
-./quickz.sh
-git clone https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
-
 #Lazymux
 cd
 git clone https://github.com/Gameye98/Lazymux
@@ -43,16 +29,24 @@ echo "alias p='python'">>~/.zshrc
 echo "alias p2='python2'">>~/.zshrc
 
 
+#termux customization
+git clone https://github.com/jotyGill/quickz-sh.git
+cd quickz-sh
+tsudo chmod +x quickz.sh
+./quickz.sh
+git clone https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+
 #Net-Hunter
 #install chroot
 cd
 curl -LO https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter
 tsudo chmod +x kalinethunter
 tsudo ./kalinethunter --insecure
-tsudo startkali
-#install tools. run this in kali-shell
-wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb
-apt install ./kali-archive-keyring_2018.1_all.deb
-apt-get update && apt-get full-upgrade -y
-apt-get install kali-linux-nethunter -y
+echo 'now run nethunter with tsudo startkali and put some commands there:'
+echo 'wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.1_all.deb'
+echo 'apt install ./kali-archive-keyring_2018.1_all.deb'
+echo 'apt-get update && apt-get full-upgrade -y'
+echo 'apt-get install kali-linux-nethunter -y'
+
   
