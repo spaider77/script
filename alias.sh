@@ -6,6 +6,7 @@ sudo rm /usr/bin/ddos*
 sudo rm /usr/bin/bomber*
 sudo rm /usr/bin/tgk*
 sudo rm /opt/alias*
+sudo rm /opt/news*
 
 
 #helpme & news
