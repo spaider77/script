@@ -25,13 +25,11 @@ su -c chown -R $uid:$uid /data/data/com.termux/ && su -c restorecon -RF /data/da
 #Lazymux
 cd
 git clone https://github.com/Gameye98/Lazymux
-cd Lazymux
-python2 lazymux.py
 
 #aliases
 echo "alias p='python'">>~/.zshrc
 echo "alias p2='python2'">>~/.zshrc
-
+echo "alias l='python2 ~/Lazymux/lazymux.py'">>~/.zshrc
 
 #termux customization
 git clone https://github.com/jotyGill/quickz-sh.git
