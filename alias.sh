@@ -5,11 +5,13 @@ sudo rm /opt/helpme*
 sudo rm /usr/bin/ddos*
 sudo rm /usr/bin/bomber*
 sudo rm /usr/bin/tgk*
+sudo rm /opt/alias*
+
 
 #helpme & news
 
 sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/news.txt
-echo 'cat /opt/news.txt'>>/root/.zshrc
+echo 'ccat /opt/news.txt'>>/root/.zshrc
 
 sudo wget -P /opt/ https://github.com/l4ckyguy/script/raw/master/helpme.txt
 sudo wget -P /usr/bin/ https://github.com/l4ckyguy/script/raw/master/helpme
