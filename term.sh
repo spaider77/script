@@ -19,7 +19,6 @@ uid=$(id -u)
 su -c chown -R $uid:$uid /data/data/com.termux/ && su -c restorecon -RF /data/data/com.termux
 
 #termux customization
-sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
 git clone https://github.com/Bhai4You/Termux-Banner
 cd Termux-Banner/zsh
 chmod +x requirement.sh t-ban.sh
@@ -28,7 +27,21 @@ bash t-ban.sh
 chsh -s zsh
 git clone https://github.com/jotyGill/quickz-sh.git
 cd quickz-sh
+tsudo chmod +x quickz.sh
 ./quickz.sh
+git clone https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
+echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+
+#Lazymux
+cd
+git clone https://github.com/Gameye98/Lazymux
+cd Lazymux
+python2 lazymux.py
+
+#aliases
+echo "alias p='python'">>~/.zshrc
+echo "alias p2='python2'">>~/.zshrc
+
 
 #Net-Hunter
 #install chroot
