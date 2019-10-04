@@ -1,0 +1,5 @@
+#!/bin/bash
+
+sudo touch /usr/bin/ohoho
+sudo echo 'echo HELLO WORLD!'>/usr/bin/ohoho
+sudo rm botest
