@@ -1,0 +1,6 @@
+echo ''
+ccat /opt/news.txt
+echo ''
+echo ''
+echo '...All done! Enjoy!'
+echo ''
