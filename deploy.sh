@@ -2,7 +2,7 @@
 apt-get install python python-pip python3 python3-pip python-dev python3-dev python-setuptools python3-setuptools zsh git curl redsocks libncursesw5-dev libgeoip-dev libtokyocabinet-dev libssl-dev -y
 
 #Bash-snippets.. 
-git clone https://github.com/alexanderepstein/Bash-Snippets.git && cd Bash& && chmod +x install.sh && ./install.sh
+git clone https://github.com/alexanderepstein/Bash-Snippets.git && cd Bash* && chmod +x install.sh && ./install.sh
 
 #bat = cat(!) with great wings :) #other https://github.com/sharkdp/bat/releases/
 wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb && dpkg -i bat&
@@ -26,3 +26,12 @@ cd nerd-fonts && ./install.sh
 cd ..
 echo "source BlaCk-Void.zshrc" >> ~/.zshrc
 sudo chsh -s /usr/bin/zsh
+
+#dircolors & zsh-syntax-highlight
+wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O ~/.dircolors
+echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.zshrc 
+. ~/.zshrc 
+echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.profile
+. ~/.profile
+sudo wget -P /usr/opt/ https://github.com/trapd00r/zsh-syntax-highlighting-filetypes/raw/master/zsh-syntax-highlighting-filetypes.zsh
+echo 'source /opt/zsh-syntax-highlighting-filetypes.zsh'>>~/.zshrc
