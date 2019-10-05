@@ -28,10 +28,36 @@ echo "source BlaCk-Void.zshrc" >> ~/.zshrc
 sudo chsh -s /usr/bin/zsh
 
 #dircolors & zsh-syntax-highlight
-wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O ~/.dircolors
+wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O ~/.dircolorhttps://github.com/CNMan/dnscrypt-proxy-config.gits
 echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.zshrc 
 . ~/.zshrc 
 echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.profile
 . ~/.profile
 sudo wget -P /usr/opt/ https://github.com/trapd00r/zsh-syntax-highlighting-filetypes/raw/master/zsh-syntax-highlighting-filetypes.zsh
 echo 'source /opt/zsh-syntax-highlighting-filetypes.zsh'>>~/.zshrc
+
+#aliases
+alias wip="wget -qO- https://wtfismyip.com/text" 
+
+#DNS-server
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
+sudo mv microsoft.asc.gpg /etc/apt/trusted.gpg.d/
+wget -q https://packages.microsoft.com/config/debian/9/prod.list
+sudo mv prod.list /etc/apt/sources.list.d/microsoft-prod.list
+sudo chown root:root /etc/apt/trusted.gpg.d/microsoft.asc.gpg
+sudo chown root:root /etc/apt/sources.list.d/microsoft-prod.list
+sudo apt-get update
+sudo apt-get install apt-transport-https
+sudo apt-get install dotnet-sdk-2.2
+wget https://download.technitium.com/dns/DnsServerPortable.tar.gz
+sudo mkdir -p /etc/dns/
+sudo tar -zxf DnsServerPortable.tar.gz -C /etc/dns/
+sudo cp /etc/dns/systemd.service /etc/systemd/system/dns.service
+sudo systemctl enable dns.service
+sudo systemctl start dns.service
+
+#DNS-crypt-proxy. other releases: https://github.com/DNSCrypt/dnscrypt-proxy/releases
+cd /opt && sudo git clone https://github.com/CNMan/dnscrypt-proxy-config.git && cd dnscrypt* && sudo ./dnscrypt-proxy-config.sh
+wget https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/2.0.27/dnscrypt-proxy-linux_x86_64-2.0.27.tar.gz && sudo tar xfz dnscrypt-proxy-linux_x86_64-2.0.27.tar.gz && sudo mv ./linux*/dnscrypt-proxy dnscrypt-proxy
+sudo ./dnscrypt-proxy -service install && sudo ./dnscrypt-proxy -service start
+chattr -i /etc/resolv.conf && rm /etc/resolv.conf && echo 'nameserver 127.0.0.1'>/etc/resolv.conf && chattr +i /etc/resolv.conf
