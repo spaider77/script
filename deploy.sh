@@ -1,6 +1,12 @@
 #general
 apt-get install python python-pip python3 python3-pip python-dev python3-dev python-setuptools python3-setuptools zsh git curl redsocks libncursesw5-dev libgeoip-dev libtokyocabinet-dev libssl-dev -y
 
+#balena-etcher
+echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
+sudo apt-get update
+sudo apt-get install balena-etcher-electron
+
 #Bash-snippets.. 
 git clone https://github.com/alexanderepstein/Bash-Snippets.git && cd Bash* && chmod +x install.sh && ./install.sh
 
