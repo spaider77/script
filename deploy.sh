@@ -1,6 +1,37 @@
 #general
 apt-get install python python-pip python3 python3-pip python-dev python3-dev python-setuptools python3-setuptools zsh git curl redsocks libncursesw5-dev libgeoip-dev libtokyocabinet-dev libssl-dev -y
 
+#vncserver
+sudo apt install xfce4 xfce4-goodies tightvncserver
+vncserver
+vncserver -kill :1
+mv /root/.vnc/xstartup /root/.vnc/xstartup.bak
+echo '#!/bin/bash'>/root/.vnc/xstartup
+echo 'xrdb /root/.Xresources'>>/root/.vnc/xstartup
+echo 'startxfce4 &'>>/root/.vnc/xstartup
+sudo chmod +x /root/.vnc/xstartup
+vncserver
+echo "[Unit]
+Description=Start TightVNC server at startup
+After=syslog.target network.target
+[Service]
+Type=forking
+User=root
+Group=root
+WorkingDirectory=/root
+PIDFile=/root/.vnc/%H:%i.pid
+ExecStartPre=-/usr/bin/vncserver -kill :%i > /dev/null 2>&1
+ExecStart=/usr/bin/vncserver -depth 24 -geometry 1280x800 :%i
+ExecStop=/usr/bin/vncserver -kill :%i
+[Install]
+WantedBy=multi-user.target">/etc/systemd/system/vncserver@.service
+sudo systemctl daemon-reload
+sudo systemctl enable vncserver@1.service
+vncserver -kill :1
+sudo systemctl start vncserver@1
+sudo systemctl status vncserver@1
+
+
 #balena-etcher
 echo "deb https://deb.etcher.io stable etcher" | sudo tee /etc/apt/sources.list.d/balena-etcher.list
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 379CE192D401AB61
