@@ -41,16 +41,16 @@ echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 #Net-Hunter
 #install chroot
-cd
-curl -LO https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter
-tsudo chmod +x kalinethunter
-tsudo ./kalinethunter --insecure
+#cd
+#curl -LO https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter
+#tsudo chmod +x kalinethunter
+#tsudo ./kalinethunter --insecure
 
-echo ''
-echo ''
-echo 'now run nethunter with tsudo startkali and put some commands there:'
-echo ''
-echo 'apt update && apt install wget openssl'
-echo 'wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.2_all.deb'
-echo 'apt install ./kali-archive-keyring_2018.2_all.deb -y'
-echo 'apt-get update && apt-get full-upgrade -y && apt-get install kali-linux-nethunter -y'  
+#echo ''
+#echo ''
+#echo 'now run nethunter with tsudo startkali and put some commands there:'
+#echo ''
+#echo 'apt update && apt install wget openssl'
+#echo 'wget https://http.kali.org/kali/pool/main/k/kali-archive-keyring/kali-archive-keyring_2018.2_all.deb'
+#echo 'apt install ./kali-archive-keyring_2018.2_all.deb -y'
+#echo 'apt-get update && apt-get full-upgrade -y && apt-get install kali-linux-nethunter -y'  
