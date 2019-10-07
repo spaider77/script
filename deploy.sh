@@ -34,12 +34,12 @@ echo "source BlaCk-Void.zshrc" >> ~/.zshrc
 sudo chsh -s /usr/bin/zsh
 
 #dircolors & zsh-syntax-highlight
-wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O ~/.dircolorhttps://github.com/CNMan/dnscrypt-proxy-config.gits
+wget https://raw.github.com/trapd00r/LS_COLORS/master/LS_COLORS -O ~/.dircolors
 echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.zshrc 
 . ~/.zshrc 
 echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.profile
 . ~/.profile
-sudo wget -P /usr/opt/ https://github.com/trapd00r/zsh-syntax-highlighting-filetypes/raw/master/zsh-syntax-highlighting-filetypes.zsh
+sudo wget -P /usr/opt/ https://github.com/trapd00r/zsh-syntax-highlighting-filetypes.zsh
 echo 'source /opt/zsh-syntax-highlighting-filetypes.zsh'>>~/.zshrc
 
 #aliases
