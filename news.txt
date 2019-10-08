@@ -1,5 +1,5 @@
 
-###BREAKING NEWS!!!!###
+###!!!!BREAKING NEWS!!!!###
 
 3.10.19
 *add RED section. There is RED team (attackers team, bad team :)) tools and snipets. Please, do not use it :)
