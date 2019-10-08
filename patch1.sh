@@ -3,8 +3,11 @@ sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.zshrc
 sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>/etc/profile
 sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.profile
 sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.bashrc
+go get -u github.com/ginuerzh/gost/cmd/gost
+rm /usr/bin/gost
+mv ~/go/bin/gost /usr/bin/gost
 wget https://github.com/constverum/ProxyBroker/archive/v0.3.2.zip && unzip v0.3.2.zip && rm v0.3.2.zip
-cd ProxyBroker-0.3.2 
+cd ProxyBroker-0.3.2
 apt-get install aio-http libffi-dev && python3 setup.py install
 cd
 rm -r ProxyBroker-0.3.2 
