@@ -97,5 +97,6 @@ sudo systemctl start dns.service
 #DNS-crypt-proxy. other releases: https://github.com/DNSCrypt/dnscrypt-proxy/releases
 cd /opt && sudo git clone https://github.com/CNMan/dnscrypt-proxy-config.git && cd dnscrypt* && sudo ./dnscrypt-proxy-config.sh
 wget https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/2.0.27/dnscrypt-proxy-linux_x86_64-2.0.27.tar.gz && sudo tar xfz dnscrypt-proxy-linux_x86_64-2.0.27.tar.gz && sudo mv ./linux*/dnscrypt-proxy dnscrypt-proxy
+#wget https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/2.0.27/dnscrypt-proxy-linux_arm64-2.0.27.tar.gz && sudo tar xfz dnscrypt-proxy-linux_arm64-2.0.27.tar.gz && sudo mv ./linux*/dnscrypt-proxy dnscrypt-proxy
 sudo ./dnscrypt-proxy -service install && sudo ./dnscrypt-proxy -service start
 chattr -i /etc/resolv.conf && rm /etc/resolv.conf && echo 'nameserver 127.0.0.1'>/etc/resolv.conf && chattr +i /etc/resolv.conf
