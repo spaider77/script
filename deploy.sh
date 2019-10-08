@@ -49,6 +49,7 @@ curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && sudo ba
 
 #go and gopath
 cd /usr/local/ && sudo wget https://dl.google.com/go/go1.13.1.linux-amd64.tar.gz && sudo tar xfz go1.13.1* && cd
+#cd /usr/local/ && sudo wget https://dl.google.com/go/go1.13.1.linux-arm64.tar.gz && sudo tar xfz go1.13.1* && cd
 sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.zshrc
 sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>/etc/profile
 sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.profile
