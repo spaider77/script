@@ -71,7 +71,7 @@ echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.zshrc
 . ~/.zshrc 
 echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.profile
 . ~/.profile
-sudo wget -P /usr/opt/ https://github.com/trapd00r/zsh-syntax-highlighting-filetypes/raw/master/zsh-syntax-highlighting-filetypes.zsh
+sudo wget -P /opt/ https://github.com/trapd00r/zsh-syntax-highlighting-filetypes/raw/master/zsh-syntax-highlighting-filetypes.zsh
 echo 'source /opt/zsh-syntax-highlighting-filetypes.zsh'>>~/.zshrc
 
 #aliases
