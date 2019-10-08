@@ -1,6 +1,26 @@
-ddos -    ddos attack script (version 1 and 2)
-bomber -  sms bomb tool
-tgk -     launch many copies of telegram-desktop | tgk 1 | tgk 2 | tgk 3 |
-dnsleak - dns leak test
+content of:/opt/helpme.txt
+#################################################################
+#                                                               #
+# There is only five  commands to use:                          #
+#                                                               #
+#    1) boba                                                    #
+#       SSH tunnel + ISP DNS settings (dnsproxy)                #
+#                                                               #
+#    2) bobo                                                    #
+#       SSH tunnel + DNS tunnel                                 #
+#                                                               #
+#    3) tide                                                    #
+#       clear ip                                                #
+#                                                               #
+#    4) welcomemessage                                          #
+#       this message                                            #
+#                                                               #
+#    5) getproxy                                                #
+#       get you super-ability, just use it :)                   #
+#                                                               #
+#                                                               #
+# @@@@@@@@  FOR CANCEL ANY PROCESS USE control+c KEY  @@@@@@@@@ #
+#                                                               #
+#################################################################
+--experimental: bobe - like boba, but use socks (http(s), 4(5))--
 
-helpme -  this message :)
