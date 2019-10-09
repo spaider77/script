@@ -52,7 +52,7 @@ sudo apt-get install balena-etcher-electron
 git clone https://github.com/alexanderepstein/Bash-Snippets.git && cd Bash* && chmod +x install.sh && ./install.sh
 
 #bat = cat(!) with great wings :) #other https://github.com/sharkdp/bat/releases/
-wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb && dpkg -i bat&
+wget https://github.com/sharkdp/bat/releases/download/v0.12.1/bat_0.12.1_amd64.deb && dpkg -i bat_0.12.1_amd64.deb
 
 #node 10
 curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh && sudo bash nodesource_setup.sh && sudo apt-get install nodejs
@@ -69,10 +69,7 @@ sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.bashrc
 sudo apt-get install zsh
 git clone https://github.com/black7375/BlaCk-Void-Zsh.git ~/.zsh && cd ~/.zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
-git clone https://github.com/ryanoasis/nerd-fonts.git
-cd nerd-fonts && ./install.sh
-cd ..
-echo "source BlaCk-Void.zshrc" >> ~/.zshrc
+echo "source ~/.zsh/BlaCk-Void.zshrc" >> ~/.zshrc
 sudo chsh -s /usr/bin/zsh
 
 #dircolors & zsh-syntax-highlight
