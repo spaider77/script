@@ -24,3 +24,5 @@ content of:/opt/helpme.txt
 #################################################################
 --experimental: bobe - like boba, but use socks (http(s), 4(5))--
 
+***use: after bobe go http://borisovich:5380 login: admin pass:31337 -> settings -> transparent proxy -> put your proxy ip and port -> save and flush dns at the bottom***
+
