@@ -11,6 +11,10 @@ wget https://github.com/intel/compute-runtime/releases/download/19.39.14278/inte
 wget https://github.com/intel/compute-runtime/releases/download/19.39.14278/intel-ocloc_19.39.14278_amd64.deb
 dpkg -i *
 
+#rtl8812au and rtl8188eus wifi firmware with nextmon ability
+apt-get install dkms
+git clone https://github.com/aircrack-ng/rtl8812au.git && cd rtl8812au && ./dkms-install.sh && cd .. && rm -r rtl8812au
+git clone https://github.com/aircrack-ng/rtl8188eus.git && cd rtl8188eus && ./dkms-install.sh && cd .. && rm -r rtl8188eus
 #vncserver
 sudo apt install xfce4 xfce4-goodies tightvncserver
 vncserver
