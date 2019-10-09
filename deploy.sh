@@ -129,3 +129,24 @@ wget https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/2.0.27/dnscryp
 #wget https://github.com/DNSCrypt/dnscrypt-proxy/releases/download/2.0.27/dnscrypt-proxy-linux_arm64-2.0.27.tar.gz && sudo tar xfz dnscrypt-proxy-linux_arm64-2.0.27.tar.gz && sudo mv ./linux*/dnscrypt-proxy dnscrypt-proxy
 sudo ./dnscrypt-proxy -service install && sudo ./dnscrypt-proxy -service start
 chattr -i /etc/resolv.conf && rm /etc/resolv.conf && echo 'nameserver 127.0.0.1'>/etc/resolv.conf && chattr +i /etc/resolv.conf
+
+#startup-script
+echo '#!/bin/bash -e
+sync; echo 3 > /proc/sys/vm/drop_caches
+swapoff -a && swapon -a
+sleep 1
+/sbin/sysctl -w net.ipv6.conf.all.disable_ipv6=1
+/sbin/sysctl -w net.ipv6.conf.default.disable_ipv6=1
+sudo killall -q chrome dropbox iceweasel skype icedove thunderbird firefox firefox-esr chromium xchat hexchat transmission steam firejail
+bleachbit -c adobe_reader.cache chromium.cache chromium.current_session chromium.history elinks.history emesene.cache epiphany.cache firefox.url_history flash.cache flash.cookies google_chrome.cache google_chrome.history  links2.history opera.cache opera.search_history opera.url_history &> /dev/null'>/usr/bin/pifpaf && chmod +x /usr/bin/pifpaf
+
+#macchanger + change-on-boot
+apt-get install macchanger
+#put this using crontab -e as sudo:
+#@reboot macchanger -A wlan0
+#@reboot macchanger -A wlan1
+#@reboot macchanger -A eth0
+#@reboot ( sleep 10 ; pifpaf )
+echo "[connection]" >> /etc/NetworkManager/NetworkManager.conf
+echo "ethernet.cloned-mac-address=preserve" >> /etc/NetworkManager/NetworkManager.conf
+echo "wifi.cloned-mac-address=preserve" >> /etc/NetworkManager/NetworkManager.conf
