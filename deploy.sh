@@ -74,8 +74,24 @@ echo 'eval $(dircolors -b ~/.dircolors)' >> ~/.profile
 sudo wget -P /opt/ https://github.com/trapd00r/zsh-syntax-highlighting-filetypes/raw/master/zsh-syntax-highlighting-filetypes.zsh
 echo 'source /opt/zsh-syntax-highlighting-filetypes.zsh'>>~/.zshrc
 
-#aliases
-alias wip="wget -qO- https://wtfismyip.com/text" 
+#KDE Akava theme + Kvantum + Breezed Glass
+#Bree
+sudo apt install git g++ extra-cmake-modules cmake gettext libkf5config-dev libkdecorations2-dev libqt5x11extras5-dev qtdeclarative5-dev libkf5guiaddons-dev libkf5configwidgets-dev libkf5windowsystem-dev libkf5coreaddons-dev libfftw3-dev
+git clone https://github.com/alex47/BreezeBlurred
+cd BreezeBlurred
+mkdir build
+cd build
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release -DKDE_INSTALL_LIBDIR=lib -DBUILD_TESTING=OFF -DKDE_INSTALL_USE_QT_SYS_PATHS=ON
+sudo make install
+kwin_x11 --replace &
+#Akava
+cd /opt && git clone https://github.com/Akava-Design/Akava-Kv.git
+#Kvantum
+cd /opt && git clone https://github.com/tsujan/Kvantum.git && cd Kvantum && cd Kvantum
+apt-get install g++ libx11-dev libxext-dev qtbase5-dev libqt5svg5-dev libqt5x11extras5-dev libkf5windowsystem-dev qttools5-dev-tools
+mkdir build && cd build
+cmake ..
+make && make install
 
 #DNS-server
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.asc.gpg
