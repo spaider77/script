@@ -1,5 +1,5 @@
 #general
-apt-get install python python-pip python3 python3-pip python-dev python3-dev python-setuptools python3-setuptools zsh git curl redsocks libncursesw5-dev libgeoip-dev libtokyocabinet-dev libssl-dev -y
+apt-get install flameshot plank python python-pip python3 python3-pip python-dev python3-dev python-setuptools python3-setuptools zsh git curl redsocks libncursesw5-dev libgeoip-dev libtokyocabinet-dev libssl-dev -y
 #for parrot-security-kde
 #apt-get install parrot-package-manager parrot-devel-extra linux-headers-5.2.0-2parrot1-all-amd64 linux-image-5.2.0-2parrot1-amd64
 
