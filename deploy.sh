@@ -1,3 +1,4 @@
+https://www.pling.com/p/1319794
 #general
 apt-get install conky-manager flameshot plank python python-pip python3 python3-pip python-dev python3-dev python-setuptools python3-setuptools zsh git curl redsocks libncursesw5-dev libgeoip-dev libtokyocabinet-dev libssl-dev -y
 #for parrot-security-kde
