@@ -150,3 +150,11 @@ apt-get install macchanger
 echo "[connection]" >> /etc/NetworkManager/NetworkManager.conf
 echo "ethernet.cloned-mac-address=preserve" >> /etc/NetworkManager/NetworkManager.conf
 echo "wifi.cloned-mac-address=preserve" >> /etc/NetworkManager/NetworkManager.conf
+
+#arm64 gost & lnxrouter
+wget https://github.com/ginuerzh/gost/releases/download/v2.8.1/gost_2.8.1_armhf.deb && dpkg -i gost* && rm gost*
+wget -P /usr/bin/ https://raw.githubusercontent.com/garywill/linux-router/master/lnxrouter && chmod +x /usr/bin/lnxrouter
+wget https://raw.githubusercontent.com/Angristan/Local-DNS-resolver/master/unbound-install.sh && chmod +x unbound-install.sh && ./unbound-install.sh && rm unbound-install.sh
+
+
+
