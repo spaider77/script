@@ -1,0 +1,12 @@
+#!/bin/bash
+
+iptables -t nat -F
+iptables -F
+lnxrouter --stop wlan0
+kill `ps -ef|grep "sshuttle -l"|grep -v "grep"|cut -c10-15`
+kill `ps -ef|grep "ssh -fND"|grep -v "grep"|cut -c10-15`
+kill `ps -ef|grep "gost -L"|grep -v "grep"|cut -c10-15`
+kill `ps -ef|grep "transproxy "|grep -v "grep"|cut -c10-15`
+echo 'nameserver 1.0.0.1'>/etc/resolv.conf
+echo 'nameserver 1.1.1.1'>>/etc/resolv.conf
+
