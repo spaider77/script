@@ -1,0 +1,32 @@
+#!/bin/bash
+
+read -p 'socks: ' socks
+read -p 'SSID: ' ssid
+
+
+rm /etc/iptables.rules666
+echo '*nat
+:PREROUTING ACCEPT [0:0]
+:INPUT ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:POSTROUTING ACCEPT [0:0]
+:TRANSOCKS - [0:0]
+-A OUTPUT -p tcp -j TRANSOCKS
+-A TRANSOCKS -d 0.0.0.0/8 -j RETURN
+-A TRANSOCKS -d 10.0.0.0/8 -j RETURN
+-A TRANSOCKS -d 127.0.0.0/8 -j RETURN
+-A TRANSOCKS -d 169.254.0.0/16 -j RETURN
+-A TRANSOCKS -d 172.16.0.0/12 -j RETURN
+-A TRANSOCKS -d 192.168.0.0/16 -j RETURN
+-A TRANSOCKS -d 224.0.0.0/4 -j RETURN
+-A TRANSOCKS -d 240.0.0.0/4 -j RETURN
+-A TRANSOCKS -p tcp -j REDIRECT --to-ports 1081
+COMMIT'>/etc/iptables.rules666
+iptables-restore < /etc/iptables.rules666
+
+rm /etc/transocks.toml
+echo 'listen = "localhost:1081"'>/etc/transocks.toml
+echo 'proxy_url = "socks5://$socks"'>>/etc/transocks.toml
+transocks /etc/transocks.toml &
+
+lnxrouter --ap wlan1 $ssid --tp 1081 --dns 53 &
