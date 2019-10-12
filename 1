@@ -1,0 +1,31 @@
+
+apt-get install libffi-dev
+pip3 install aiohttp
+npm install -g npm
+
+cd /usr/local/ && sudo wget https://dl.google.com/go/go1.13.1.linux-amd64.tar.gz && sudo tar xfz go1.13.1.linux-amd64.tar.gz && rm go1.13.1.linux-amd64.tar.gz && cd
+sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.zshrc
+sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>/etc/profile
+sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.profile
+sudo echo 'export PATH=$PATH:/usr/local/go/bin'>>~/.bashrc
+
+export PATH=$PATH:/usr/local/go/bin
+
+wget https://github.com/constverum/ProxyBroker/archive/v0.3.2.zip && unzip v0.3.2.zip && rm v0.3.2.zip
+cd ProxyBroker-0.3.2
+python3 setup.py install
+cd
+rm -r ProxyBroker-0.3.2 
+
+echo '#!/bin/bash
+echo " "
+echo "types: SOCKS4 SOCKS5 ; country: US, RU, GB ... etc ; how much: 5, 10, ... etc"
+echo ""
+read -p "type: " type
+read -p "country: " country
+read -p "how much: " hm
+echo ""
+echo "PODOZHDI STARIKASHKA, SHA VSE BUDET :)"
+echo ""
+proxybroker find --types $type --lvl High --countries $country --strict -l $hm'>/usr/bin/getproxy && chmod +x /usr/bin/getproxy
+bash-obfuscate /usr/bin/getproxy -o /usr/bin/getproxy
