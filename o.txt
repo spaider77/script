@@ -1,0 +1,4 @@
+Server IP: 89.35.39.115
+IPsec PSK: DnYwCGHZ4mc2fbEbLZ4s
+Username: vpnuser
+Password: F3yPSzgNx6AEZrX2
