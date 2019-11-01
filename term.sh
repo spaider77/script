@@ -39,6 +39,18 @@ tsudo chmod +x quickz.sh
 git clone https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
 echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
+#bomber
+git clone https://github.com/DanyaTV/infinite-nomber 
+cd infinite-nomber
+chmod +x ./infinite-bomber 
+
+#tool-x
+git clone https://github.com/Rajkumrdusad/Tool-X.git
+cd Tool-X
+chmod +x  install.aex  && ./install.aex
+
+
+
 #Net-Hunter
 #install chroot
 #cd
