@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rm /usr/bin/hello world
-echo '#!/bin/bash'>/use/bin/hello world
-echo 'echo HELLO!'>/use/bin/hello world
+rm /usr/bin/helloworld
+echo '#!/bin/bash'>/use/bin/helloworld
+echo 'echo HELLO!'>/use/bin/helloworld
 chmod  +x  /use/bin/helloworld
